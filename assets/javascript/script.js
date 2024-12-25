@@ -42,19 +42,23 @@ fetch(apiEndpoint)
   let allData = []; // To store fetched data
 
   // Function to fetch and display data
-  async function fetchData() {
-    try {
-      const response = await fetch(apiEndpointPopular);
+function fetchData() {
+  fetch(apiEndpointPopular)
+    .then(response => {
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
-
-      allData = await response.json(); // Store fetched data
+      return response.json(); // Parse JSON data
+    })
+    .then(data => {
+      allData = data; // Store fetched data
       renderData(allData); // Render data to the DOM
-    } catch (error) {
+    })
+    .catch(error => {
       console.error("Error fetching data:", error);
-    }
-  }
+    });
+}
+
 
   // Function to render data dynamically
   function renderData(data) {

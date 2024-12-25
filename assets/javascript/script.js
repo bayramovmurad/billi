@@ -35,7 +35,7 @@ fetch(apiEndpoint)
 // ! popular channels filter actions
 
 
-  const apiEndpointPopular = "../assets/data/popularchannels.json"; // Path to JSON file
+  const apiEndpointPopular = "./assets/data/popularchannels.json"; // Path to JSON file
   const container = document.querySelector(".popular_chanels_main"); // Main container
   const filterMenu = document.getElementById("filter-menu"); // Filter menu
 

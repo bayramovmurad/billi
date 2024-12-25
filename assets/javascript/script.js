@@ -34,8 +34,8 @@ fetch(apiEndpoint)
 
 // ! popular channels filter actions
 
-document.addEventListener("DOMContentLoaded", () => {
-  const apiEndpoint = "../assets/data/popularchannels.json"; // Path to JSON file
+
+  const apiEndpointPopular = "../assets/data/popularchannels.json"; // Path to JSON file
   const container = document.querySelector(".popular_chanels_main"); // Main container
   const filterMenu = document.getElementById("filter-menu"); // Filter menu
 
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to fetch and display data
   async function fetchData() {
     try {
-      const response = await fetch(apiEndpoint);
+      const response = await fetch(apiEndpointPopular);
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial Fetch Call
   fetchData();
-});
+
 
 // ! search part
 
